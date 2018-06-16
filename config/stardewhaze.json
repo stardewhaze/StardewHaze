@@ -48,5 +48,43 @@
       "SeedTileLocation": "resources/crops/PurpleHazeSeed.png",
       "ProductTileLocation": "resources/crops/PurpleHazeNug.png"
     }
+  ],
+  "Objects": [
+    {
+      "Name": "Orange Bud Joint",
+      "Price": 1000,
+      "Edibility": -300,
+      "Type": "Basic -26",
+      "DisplayName": "Orange Bud Joint",
+      "Description": "This will give you a nice head high.",
+      "TilesheetLocation": "resources/objects/Joint.png"
+    },
+    {
+      "Name": "Orange Bud Blunt",
+      "Price": 1400,
+      "Edibility": -300,
+      "Type": "Basic -26",
+      "DisplayName": "Orange Bud Blunt",
+      "Description": "This will give you a strong head high.",
+      "TilesheetLocation": "resources/objects/Blunt.png"
+    },
+    {
+      "Name": "Purple Haze Joint",
+      "Price": 1200,
+      "Edibility": -300,
+      "Type": "Basic -26",
+      "DisplayName": "Purple Haze Joint",
+      "Description": "This will give you a nice head high.",
+      "TilesheetLocation": "resources/objects/Joint.png"
+    },
+    {
+      "Name": "Purple Haze Blunt",
+      "Price": 1500,
+      "Edibility": -300,
+      "Type": "Basic -26",
+      "DisplayName": "Purple Haze Blunt",
+      "Description": "This will give you a strong head high.",
+      "TilesheetLocation": "resources/objects/Blunt.png"
+    }
   ]
 }
