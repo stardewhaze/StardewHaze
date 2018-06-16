@@ -50,19 +50,19 @@
             asset.ReplaceWith(new Texture2D(
                 Game1.graphics.GraphicsDevice, 
                 data.Width, 
-                Math.Max(data.Height, ((int)this.assetGraph.Objects.Select(cropPair => cropPair.Key).Max() / 24) * 16 + 16)));
+                Math.Max(
+                    data.Height, 
+                    ((int)this.assetGraph.Objects.Select(cropPair => cropPair.Key).Max() / 24) * 16 + 16)));
 
             asset.AsImage().PatchImage(data);
 
             this.assetGraph.Objects
                 .ToList()
                 .ForEach(obj =>
-                {
                     asset.AsImage().PatchImage(
                         this.helper.Content.Load<Texture2D>(obj.Value.TilesheetLocation, ContentSource.ModFolder),
                         null,
-                        new Rectangle(((int)obj.Key % 24) * 16, ((int)obj.Key / 24) * 16, 16, 16));
-                });
+                        new Rectangle(((int)obj.Key % 24) * 16, ((int)obj.Key / 24) * 16, 16, 16)));
         }
     }
 }
