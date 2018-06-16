@@ -1,0 +1,10 @@
+﻿{
+  "Name": "StardewHaze",
+  "Author": "stardewhaze",
+  "Version": "0.0.1",
+  "Description": "Hey, hey, hey...",
+  "UniqueID": "budr.stardewhaze",
+  "EntryDll": "StardewHaze.dll",
+  "MinimumApiVersion": "2.0",
+  "UpdateKeys": []
+}

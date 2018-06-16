@@ -1,0 +1,52 @@
+﻿{
+  "ObjectTileOffset": 900,
+  "CropTileOffset": 50,
+  "Crops": [
+    {
+      "CropName": "Orange Bud",
+      "SeedName": "Orange Bud Seed",
+      "ProductName": "Orange Nug",
+      "ProductDescription": "It's almost the sweetest thing you've ever smelled.",
+      "SeedDescription": "The prettiest orange flower in Stardew! Takes 10 days of love to grow. Regrows every 4 days.",
+      "ProductPrice": 420,
+      "SeedPrice": 80,
+      "ProductEdibility": 20,
+      "ProductType": "Flower -80",
+      "ProductRemainder": "food/0 0 0 0 0 0 0 0 0 0 0/0",
+      "Identifier": "OrangeBud",
+      "DaysPerGrowthStage": "2 1 2 1 2",
+      "GrowthSeasons": "spring summer fall",
+      "RegrowAfterHarvest": 4,
+      "HarvestMethod": 0,
+      "ExtraHarvest": "true 1 1 2 .02",
+      "RaisedSeeds": "false",
+      "TintColor": "false",
+      "CropTileLocation": "resources/crops/OrangeBudCrop.png",
+      "SeedTileLocation": "resources/crops/OrangeBudSeed.png",
+      "ProductTileLocation": "resources/crops/OrangeBudNug.png"
+    },
+    {
+      "CropName": "Purple Haze",
+      "SeedName": "Purple Haze Seed",
+      "ProductName": "Purple Nug",
+      "ProductDescription": "There's no other shade of purple like it.",
+      "SeedDescription": "The prettiest purple flower in Stardew! Takes 12 days of love to grow. Regrows every 5 days.",
+      "ProductPrice": 520,
+      "SeedPrice": 120,
+      "ProductEdibility": 25,
+      "ProductType": "Flower -80",
+      "ProductRemainder": "food/0 0 0 0 0 0 0 0 0 0 0/0",
+      "Identifier": "PurpleHaze",
+      "DaysPerGrowthStage": "2 2 2 2 2",
+      "GrowthSeasons": "spring summer fall",
+      "RegrowAfterHarvest": 5,
+      "HarvestMethod": 0,
+      "ExtraHarvest": "true 1 1 2 .02",
+      "RaisedSeeds": "false",
+      "TintColor": "false",
+      "CropTileLocation": "resources/crops/PurpleHazeCrop.png",
+      "SeedTileLocation": "resources/crops/PurpleHazeSeed.png",
+      "ProductTileLocation": "resources/crops/PurpleHazeNug.png"
+    }
+  ]
+}
