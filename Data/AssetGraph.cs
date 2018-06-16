@@ -12,6 +12,7 @@
         protected uint NextObjectIndex { get; } = 900;
         public IDictionary<uint, CropConfig> Crops { get; }
         public IDictionary<uint, ObjectConfig> Objects { get; }
+        public IDictionary<string, RecipeConfig> Recipes { get; }
 
         /// <summary>
         ///     Initializes a new instance of the <see cref="AssetGraph"/> class.
@@ -24,12 +25,14 @@
             uint nextCropIndex,
             uint nextObjectIndex,
             IDictionary<uint, CropConfig> cropData,
-            IDictionary<uint, ObjectConfig> objectData)
+            IDictionary<uint, ObjectConfig> objectData,
+            IDictionary<string, RecipeConfig> recipeData)
         {
             this.NextCropIndex = nextCropIndex;
             this.NextObjectIndex = nextObjectIndex;
             this.Crops = cropData;
             this.Objects = objectData;
+            this.Recipes = recipeData;
         }
 
         /// <summary>
@@ -46,7 +49,7 @@
         public static AssetGraph BuildAssetGraph(StardewHazeConfig stardewHazeConfig)
         {
             // start building the asset graph
-            return stardewHazeConfig.Crops
+            var firstStage = stardewHazeConfig.Crops
                 // aggregate by crops, since crops require objects (seed and product)
                 .Aggregate(
                     new AssetGraph(
@@ -69,7 +72,8 @@
                                 Description = stardewHazeConfig.Objects[index - stardewHazeConfig.ObjectTileOffset].Description,
                                 ObjectId = index,
                                 TilesheetLocation = stardewHazeConfig.Objects[index - stardewHazeConfig.ObjectTileOffset].TilesheetLocation
-                            })),
+                            }),
+                        new Dictionary<string, RecipeConfig>()),
                     // with intermediate results, for every crop in configuration
                     (assetGraph, crop) =>
                         // update the intermediate asset graph
@@ -116,7 +120,7 @@
                             {
                                 // and adding the current crop's product
                                 {
-                                    (uint)assetGraph.NextObjectIndex,
+                                    assetGraph.NextObjectIndex,
                                     new ObjectConfig
                                     {
                                         Name = crop.ProductName,
@@ -132,7 +136,7 @@
                                 },
                                 // and adding the current crop's seed
                                 {
-                                    (uint)assetGraph.NextObjectIndex + 1,
+                                    assetGraph.NextObjectIndex + 1,
                                     new ObjectConfig
                                     {
                                         Name = crop.SeedName,
@@ -145,7 +149,38 @@
                                         TilesheetLocation = crop.SeedTileLocation,
                                     }
                                 }
-                            }));
+                            },
+                            new Dictionary<string, RecipeConfig>()));
+
+            return new AssetGraph(
+                firstStage.NextCropIndex,
+                firstStage.NextObjectIndex,
+                firstStage.Crops,
+                firstStage.Objects,
+                stardewHazeConfig.Recipes
+                    .ToDictionary(
+                        recipe => recipe.Name,
+                        recipe => new RecipeConfig
+                        {
+                            Name = recipe.Name,
+                            IsStackable = recipe.IsStackable,
+                            ObjectId = firstStage.Objects
+                                .Where(obj => obj.Value.Name == recipe.Name)
+                                .Select(obj => obj.Value.ObjectId).First(),
+                            UsageLocation = recipe.UsageLocation,
+                            SkillAndLevel = recipe.SkillAndLevel,
+                            IsCookable = recipe.IsCookable,
+                            LearnOnLoad = recipe.LearnOnLoad,
+                            Ingredients = recipe.Ingredients.Select(ingredient => 
+                                new RecipeIngredients
+                                {
+                                    Name = ingredient.Name,
+                                    ObjectId = firstStage.Objects
+                                        .Where(obj => obj.Value.Name == ingredient.Name)
+                                        .Select(obj => obj.Value.ObjectId).First(),
+                                    Quantity = ingredient.Quantity
+                                }).ToArray()
+                        }));
         }
     }
 }

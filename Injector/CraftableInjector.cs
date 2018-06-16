@@ -5,16 +5,16 @@
     using System.Linq;
 
     /// <summary>
-    ///     Represents an injector for object data.
+    ///     Represents an injector for craftable data.
     /// </summary>
-    public class ObjectInjector : IAssetEditor
+    public class CraftableInjector : IAssetEditor
     {
         private readonly IMonitor monitor;
         private readonly IModHelper helper;
         private readonly AssetGraph assetGraph;
 
         /// <summary>
-        ///     Initializes a new instance of the <see cref="ObjectInjector"/> class.
+        ///     Initializes a new instance of the <see cref="CraftableInjector"/> class.
         /// </summary>
         /// <param name="helper">
         ///     An <see cref="IModHelper"/> to access the game context.
@@ -25,7 +25,7 @@
         /// <param name="assetGraph">
         ///     The <see cref="AssetGraph"/> containing all object data and indices.
         /// </param>
-        public ObjectInjector(IModHelper helper, IMonitor monitor, AssetGraph assetGraph)
+        public CraftableInjector(IModHelper helper, IMonitor monitor, AssetGraph assetGraph)
         {
             this.monitor = monitor;
             this.helper = helper;
@@ -35,19 +35,20 @@
         /// <inheritdoc />
         public bool CanEdit<T>(IAssetInfo asset)
         {
-            return asset.AssetNameEquals("Data/ObjectInformation");
+            return asset.AssetNameEquals("Data/CraftingRecipes");
         }
 
         /// <inheritdoc />
         public void Edit<T>(IAssetData asset)
         {
-            var data = asset.AsDictionary<int, string>().Data;
+            var data = asset.AsDictionary<string, string>().Data;
 
-            this.assetGraph.Objects
+            this.assetGraph.Recipes
                 .Select(objectPair => objectPair.Value)
-                .Where(obj => !data.ContainsKey(obj.ObjectId))
+                .Where(obj => !data.ContainsKey(obj.Name))
+                .Where(obj => !obj.IsCookable)
                 .ToList()
-                .ForEach(obj => data.Add(obj.ObjectId, obj.ToString()));
+                .ForEach(obj => data.Add(obj.Name, obj.ToString()));
         }
     }
 }

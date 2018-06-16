@@ -47,22 +47,23 @@
         {
             var data = asset.AsImage().Data;
 
-            asset.ReplaceWith(new Texture2D(
-                Game1.graphics.GraphicsDevice, 
-                data.Width, 
-                Math.Max(data.Height, ((int)this.assetGraph.Crops.Select(cropPair => cropPair.Key).Max() / 2) * 32 + 32)));
+            asset.ReplaceWith(
+                new Texture2D(
+                    Game1.graphics.GraphicsDevice, 
+                    data.Width, 
+                    Math.Max(
+                        data.Height, 
+                        ((int)this.assetGraph.Crops.Select(cropPair => cropPair.Key).Max() / 2) * 32 + 32)));
 
             asset.AsImage().PatchImage(data);
 
             this.assetGraph.Crops
                 .ToList()
-                .ForEach(crop => 
-                {
+                .ForEach(crop =>
                     asset.AsImage().PatchImage(
                         this.helper.Content.Load<Texture2D>(crop.Value.CropTileLocation, ContentSource.ModFolder),
                         null,
-                        new Rectangle(((int)crop.Key % 2) * 128, ((int)crop.Key / 2) * 32, 128, 32));
-                });
+                        new Rectangle(((int)crop.Key % 2) * 128, ((int)crop.Key / 2) * 32, 128, 32)));
         }
     }
 }

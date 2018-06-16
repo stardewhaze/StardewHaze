@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Netcode">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Stardew Valley\Netcode.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,11 +48,14 @@
     <Compile Include="Data\AssetGraph.cs" />
     <Compile Include="Data\CropConfig.cs" />
     <Compile Include="Data\ObjectConfig.cs" />
+    <Compile Include="Data\RecipeConfig.cs" />
     <Compile Include="Data\StardewHazeConfig.cs" />
     <Compile Include="Injector\CropInjector.cs" />
     <Compile Include="Injector\CropTileSheetInjector.cs" />
     <Compile Include="Injector\ObjectInjector.cs" />
     <Compile Include="Injector\ObjectTilesheetInjector.cs" />
+    <Compile Include="Injector\CraftableInjector.cs" />
+    <Compile Include="Injector\ShopInjector.cs" />
     <Compile Include="StardewHaze.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

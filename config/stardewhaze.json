@@ -1,4 +1,4 @@
-﻿{
+{
   "ObjectTileOffset": 900,
   "CropTileOffset": 50,
   "Crops": [
@@ -85,6 +85,48 @@
       "DisplayName": "Purple Haze Blunt",
       "Description": "This will give you a strong head high.",
       "TilesheetLocation": "resources/objects/Blunt.png"
+    }
+  ],
+  "Recipes": [
+    {
+      "Name": "Orange Bud Joint",
+      "IsCookable": false,
+      "Ingredients": [
+        {
+          "Name": "Orange Nug",
+          "Quantity": 2
+        }
+      ]
+    },
+    {
+      "Name": "Orange Bud Blunt",
+      "IsCookable": false,
+      "Ingredients": [
+        {
+          "Name": "Orange Nug",
+          "Quantity": 2
+        }
+      ]
+    },
+    {
+      "Name": "Purple Haze Joint",
+      "IsCookable": false,
+      "Ingredients": [
+        {
+          "Name": "Purple Nug",
+          "Quantity": 2
+        }
+      ]
+    },
+    {
+      "Name": "Purple Haze Blunt",
+      "IsCookable": false,
+      "Ingredients": [
+        {
+          "Name": "Purple Nug",
+          "Quantity": 2
+        }
+      ]
     }
   ]
 }

@@ -43,8 +43,9 @@
         {
             var data = asset.AsDictionary<int, string>().Data;
 
-            this.assetGraph.Crops.Where(cropPair => !data.ContainsKey(cropPair.Value.SeedId))
+            this.assetGraph.Crops
                 .Select(cropPair => cropPair.Value)
+                .Where(crop => !data.ContainsKey(crop.SeedId))
                 .ToList()
                 .ForEach(crop => data.Add(crop.SeedId, crop.ToString()));
         }
