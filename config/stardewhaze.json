@@ -1,4 +1,4 @@
-﻿{
+{
   "ObjectTileOffset": 900,
   "CropTileOffset": 50,
   "Crops": [
@@ -90,11 +90,11 @@
   "Recipes": [
     {
       "Name": "Orange Bud Joint",
-      "IsCookable":  false,
+      "IsCookable": false,
       "Ingredients": [
         {
           "Name": "Orange Nug",
-          "Quantity":  2
+          "Quantity": 2
         }
       ]
     },
