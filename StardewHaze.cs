@@ -16,16 +16,6 @@
                     helper.ReadJsonFile<StardewHazeConfig>("config/stardewhaze.json") 
                     ?? new StardewHazeConfig());
 
-            foreach (var obj in assetGraph.Objects)
-            {
-                this.Monitor.Log(obj.Key + ": " + obj.Value);
-            }
-            
-            foreach (var crop in assetGraph.Crops)
-            {
-                this.Monitor.Log(crop.Key + " at index " + crop.Value.SeedId + ": " + crop.Value);
-            }
-
             // attach asset injectors
             helper.Content.AssetEditors.Add(new CropInjector(helper, this.Monitor, assetGraph));
             helper.Content.AssetEditors.Add(new CropTileSheetInjector(helper, this.Monitor, assetGraph));

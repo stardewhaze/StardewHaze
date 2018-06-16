@@ -52,14 +52,24 @@
                     new AssetGraph(
                         // start of tiling at indices provided by configuration
                         stardewHazeConfig.CropTileOffset,
-                        stardewHazeConfig.ObjectTileOffset,
+                        stardewHazeConfig.ObjectTileOffset + (uint)stardewHazeConfig.Objects.Length,
                         // start off with an empty crop database
                         new Dictionary<uint, CropConfig>(),
                         // and seed the object database with objects provided by configuration
-                        Enumerable.ToDictionary(
-                            stardewHazeConfig.Objects,
-                            objectDictionary => (uint)objectDictionary.ObjectId,
-                            objectDictionary => objectDictionary)),
+                        Enumerable.Range((int)stardewHazeConfig.ObjectTileOffset, stardewHazeConfig.Objects.Length)
+                        .ToDictionary(
+                            index => (uint)index,
+                            index => new ObjectConfig
+                            {
+                                Name = stardewHazeConfig.Objects[index - stardewHazeConfig.ObjectTileOffset].Name,
+                                Price = stardewHazeConfig.Objects[index - stardewHazeConfig.ObjectTileOffset].Price,
+                                Edibility = stardewHazeConfig.Objects[index - stardewHazeConfig.ObjectTileOffset].Edibility,
+                                Type = stardewHazeConfig.Objects[index - stardewHazeConfig.ObjectTileOffset].Type,
+                                DisplayName = stardewHazeConfig.Objects[index - stardewHazeConfig.ObjectTileOffset].DisplayName,
+                                Description = stardewHazeConfig.Objects[index - stardewHazeConfig.ObjectTileOffset].Description,
+                                ObjectId = index,
+                                TilesheetLocation = stardewHazeConfig.Objects[index - stardewHazeConfig.ObjectTileOffset].TilesheetLocation
+                            })),
                     // with intermediate results, for every crop in configuration
                     (assetGraph, crop) =>
                         // update the intermediate asset graph
@@ -117,7 +127,7 @@
                                         Description = crop.ProductDescription,
                                         Remainder = crop.ProductRemainder,
                                         ObjectId = (int)assetGraph.NextObjectIndex,
-                                        TilesheetLocation = crop.ProductTileLocation
+                                        TilesheetLocation = crop.ProductTileLocation,
                                     }
                                 },
                                 // and adding the current crop's seed
@@ -132,7 +142,7 @@
                                         DisplayName = crop.SeedName,
                                         Description = crop.SeedDescription,
                                         ObjectId = (int)assetGraph.NextObjectIndex + 1,
-                                        TilesheetLocation = crop.SeedTileLocation
+                                        TilesheetLocation = crop.SeedTileLocation,
                                     }
                                 }
                             }));
