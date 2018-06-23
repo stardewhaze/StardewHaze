@@ -6,15 +6,15 @@
       "CropName": "Orange Bud",
       "SeedName": "Orange Bud Seed",
       "ProductName": "Orange Nug",
-      "ProductDescription": "It's almost the sweetest thing you've ever smelled.",
-      "SeedDescription": "The prettiest orange flower in Stardew! Takes 10 days of love to grow. Regrows every 4 days.",
-      "ProductPrice": 420,
+      "ProductDescription": "This nug gives off a sweet aroma.",
+      "SeedDescription": "The prettiest orange flower in Stardew! Takes 7 days of love to grow. Regrows every 4 days. Doesn't grow in winter.",
+      "ProductPrice": 275,
       "SeedPrice": 80,
       "ProductEdibility": 20,
       "ProductType": "Flower -80",
       "ProductRemainder": "food/0 0 0 0 0 0 0 0 0 0 0/0",
       "Identifier": "OrangeBud",
-      "DaysPerGrowthStage": "2 1 2 1 2",
+      "DaysPerGrowthStage": "1 2 1 2 1",
       "GrowthSeasons": "spring summer fall",
       "RegrowAfterHarvest": 4,
       "HarvestMethod": 0,
@@ -30,14 +30,14 @@
       "SeedName": "Purple Haze Seed",
       "ProductName": "Purple Nug",
       "ProductDescription": "There's no other shade of purple like it.",
-      "SeedDescription": "The prettiest purple flower in Stardew! Takes 12 days of love to grow. Regrows every 5 days.",
-      "ProductPrice": 520,
+      "SeedDescription": "The prettiest purple flower in Stardew! Takes 8 days of love to grow. Regrows every 5 days. Doesn't grow in winter.",
+      "ProductPrice": 350,
       "SeedPrice": 120,
       "ProductEdibility": 25,
       "ProductType": "Flower -80",
       "ProductRemainder": "food/0 0 0 0 0 0 0 0 0 0 0/0",
       "Identifier": "PurpleHaze",
-      "DaysPerGrowthStage": "2 2 2 2 2",
+      "DaysPerGrowthStage": "1 2 2 2 1",
       "GrowthSeasons": "spring summer fall",
       "RegrowAfterHarvest": 5,
       "HarvestMethod": 0,
@@ -47,12 +47,58 @@
       "CropTileLocation": "resources/crops/PurpleHazeCrop.png",
       "SeedTileLocation": "resources/crops/PurpleHazeSeed.png",
       "ProductTileLocation": "resources/crops/PurpleHazeNug.png"
+    },
+    {
+      "CropName": "Crystal Mass",
+      "SeedName": "Crystal Mass Seed",
+      "ProductName": "Crystal Nug",
+      "ProductDescription": "This nug looks like it's made from glass.",
+      "SeedDescription": "Flowers with ephemeral crystals! Takes 7 days of love to grow. Doesn't grow in winter.",
+      "ProductPrice": 550,
+      "SeedPrice": 180,
+      "ProductEdibility": 25,
+      "ProductType": "Flower -80",
+      "ProductRemainder": "food/0 0 0 0 0 0 0 0 0 0 0/0",
+      "Identifier": "CrystalMass",
+      "DaysPerGrowthStage": "1 1 1 2 2",
+      "GrowthSeasons": "spring summer fall",
+      "RegrowAfterHarvest": 0,
+      "HarvestMethod": 0,
+      "ExtraHarvest": "true 1 1 2 .01",
+      "RaisedSeeds": "false",
+      "TintColor": "false",
+      "CropTileLocation": "resources/crops/CrystalMassCrop.png",
+      "SeedTileLocation": "resources/crops/CrystalMassSeed.png",
+      "ProductTileLocation": "resources/crops/CrystalMassNug.png"
+    },
+    {
+      "CropName": "Dank Pineapple Plant",
+      "SeedName": "Dank Pineapple Seed",
+      "ProductName": "Dank Pineapple",
+      "ProductDescription": "Leaves an exotic and fruity taste with every hit.",
+      "SeedDescription": "A THC-filled fruit for the summer! Takes 7 days of love to grow.",
+      "ProductPrice": 500,
+      "SeedPrice": 150,
+      "ProductEdibility": 30,
+      "ProductType": "Flower -80",
+      "ProductRemainder": "food/0 0 0 0 0 0 0 0 0 0 0/0",
+      "Identifier": "DankPineapple",
+      "DaysPerGrowthStage": "1 1 2 1 2",
+      "GrowthSeasons": "summer",
+      "RegrowAfterHarvest": 0,
+      "HarvestMethod": 0,
+      "ExtraHarvest": "false",
+      "RaisedSeeds": "false",
+      "TintColor": "false",
+      "CropTileLocation": "resources/crops/DankPineappleCrop.png",
+      "SeedTileLocation": "resources/crops/DankPineappleSeed.png",
+      "ProductTileLocation": "resources/crops/DankPineappleNug.png"
     }
   ],
   "Objects": [
     {
       "Name": "Orange Bud Joint",
-      "Price": 1000,
+      "Price": 300,
       "Edibility": -300,
       "Type": "Basic -26",
       "DisplayName": "Orange Bud Joint",
@@ -60,8 +106,17 @@
       "TilesheetLocation": "resources/objects/Joint.png"
     },
     {
+      "Name": "Long Orange Bud Joint",
+      "Price": 400,
+      "Edibility": -300,
+      "Type": "Basic -26",
+      "DisplayName": "Long Orange Bud Joint",
+      "Description": "This long smoker will give you a nice head high.",
+      "TilesheetLocation": "resources/objects/BigJoint.png"
+    },
+    {
       "Name": "Orange Bud Blunt",
-      "Price": 1400,
+      "Price": 500,
       "Edibility": -300,
       "Type": "Basic -26",
       "DisplayName": "Orange Bud Blunt",
@@ -70,7 +125,7 @@
     },
     {
       "Name": "Purple Haze Joint",
-      "Price": 1200,
+      "Price": 375,
       "Edibility": -300,
       "Type": "Basic -26",
       "DisplayName": "Purple Haze Joint",
@@ -78,13 +133,67 @@
       "TilesheetLocation": "resources/objects/Joint.png"
     },
     {
+      "Name": "Long Purple Haze Joint",
+      "Price": 475,
+      "Edibility": -300,
+      "Type": "Basic -26",
+      "DisplayName": "Long Purple Haze Joint",
+      "Description": "This long smoker will give you a nice head high.",
+      "TilesheetLocation": "resources/objects/BigJoint.png"
+    },
+    {
       "Name": "Purple Haze Blunt",
-      "Price": 1500,
+      "Price": 575,
       "Edibility": -300,
       "Type": "Basic -26",
       "DisplayName": "Purple Haze Blunt",
       "Description": "This will give you a strong head high.",
       "TilesheetLocation": "resources/objects/Blunt.png"
+    },
+    {
+      "Name": "Apple Pipe",
+      "Price": 500,
+      "Edibility": -300,
+      "Type": "Basic -26",
+      "DisplayName": "Apple Pipe",
+      "Description": "An unusually enjoyable way to smoke.",
+      "TilesheetLocation": "resources/objects/ApplePipe.png"
+    },
+    {
+      "Name": "Pipe",
+      "Price": 200,
+      "Edibility": -300,
+      "Type": "Basic -26",
+      "DisplayName": "Pipe",
+      "Description": "For the classy and portable smoker.",
+      "TilesheetLocation": "resources/objects/Pipe.png"
+    },
+    {
+      "Name": "Bong",
+      "Price": 300,
+      "Edibility": -300,
+      "Type": "Basic -26",
+      "DisplayName": "Bong",
+      "Description": "For the couch smoker.",
+      "TilesheetLocation": "resources/objects/Bong.png"
+    },
+    {
+      "Name": "Cross Joint",
+      "Price": 800,
+      "Edibility": -300,
+      "Type": "Basic -26",
+      "DisplayName": "Cross Joint",
+      "Description": "An unusually enjoyable way to smoke.",
+      "TilesheetLocation": "resources/objects/CrossJoint.png"
+    },
+    {
+      "Name": "Bakin' Brownies",
+      "Price": 1000,
+      "Edibility": 100,
+      "Type": "Basic -26",
+      "DisplayName": "Bakin Brownies",
+      "Description": "These brownies have a psychedelic aroma.",
+      "TilesheetLocation": "resources/objects/Brownie.png"
     }
   ],
   "Recipes": [
@@ -94,6 +203,16 @@
       "Ingredients": [
         {
           "Name": "Orange Nug",
+          "Quantity": 1
+        }
+      ]
+    },
+    {
+      "Name": "Long Orange Bud Joint",
+      "IsCookable": false,
+      "Ingredients": [
+        {
+          "Name": "Orange Nug",
           "Quantity": 2
         }
       ]
@@ -114,6 +233,16 @@
       "Ingredients": [
         {
           "Name": "Purple Nug",
+          "Quantity": 1
+        }
+      ]
+    },
+    {
+      "Name": "Long Purple Haze Joint",
+      "IsCookable": false,
+      "Ingredients": [
+        {
+          "Name": "Purple Nug",
           "Quantity": 2
         }
       ]
@@ -125,6 +254,82 @@
         {
           "Name": "Purple Nug",
           "Quantity": 2
+        }
+      ]
+    },
+    {
+      "Name": "Cross Joint",
+      "IsCookable": false,
+      "Ingredients": [
+        {
+          "Name": "Purple Nug",
+          "Quantity": 1
+        },
+        {
+          "Name": "Orange Nug",
+          "Quantity": 1
+        }
+      ]
+    },
+    {
+      "Name": "Bakin' Brownies",
+      "IsCookable": false,
+      "Ingredients": [
+        {
+          "Name": "Egg",
+          "Quantity": 1,
+          "ObjectId": 176
+        },
+        {
+          "Name": "Large Milk",
+          "Quantity": 1,
+          "ObjectId": 186
+        },
+        {
+          "Name": "Sugar",
+          "Quantity": 1,
+          "ObjectId": 245
+        },
+        {
+          "Name": "Purple Nug",
+          "Quantity": 1
+        }
+      ]
+    },
+    {
+      "Name": "Bong",
+      "IsCookable": false,
+      "Ingredients": [
+        {
+          "Name": "Stone",
+          "Quantity": 5,
+          "ObjectId": 390
+        }
+      ]
+    },
+    {
+      "Name": "Pipe",
+      "IsCookable": false,
+      "Ingredients": [
+        {
+          "Name": "Wood",
+          "Quantity": 5,
+          "ObjectId": 388
+        }
+      ]
+    },
+    {
+      "Name": "Apple Pipe",
+      "IsCookable": false,
+      "Ingredients": [
+        {
+          "Name": "Apple",
+          "Quantity": 1,
+          "ObjectId":  613
+        },
+        {
+          "Name": "Pipe",
+          "Quantity": 1
         }
       ]
     }

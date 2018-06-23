@@ -177,7 +177,8 @@
                                     Name = ingredient.Name,
                                     ObjectId = firstStage.Objects
                                         .Where(obj => obj.Value.Name == ingredient.Name)
-                                        .Select(obj => obj.Value.ObjectId).First(),
+                                        .Select(obj => obj.Value.ObjectId)
+                                        .DefaultIfEmpty(ingredient.ObjectId).First(),
                                     Quantity = ingredient.Quantity
                                 }).ToArray()
                         }));
