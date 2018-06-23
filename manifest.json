@@ -1,7 +1,7 @@
 {
   "Name": "StardewHaze",
   "Author": "stardewhaze",
-  "Version": "0.0.3",
+  "Version": "0.0.4",
   "Description": "Hey, hey, hey...",
   "UniqueID": "stardewhaze.stardewhaze",
   "EntryDll": "StardewHaze.dll",
